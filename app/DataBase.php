@@ -10,8 +10,8 @@ class DataBase {
     public $dbname = 'mysql';
     public $charset = 'utf8';
     public $port = 3306;
-    public $login = 'admin';
-    public $pass = '123';
+    public $login;
+    public $pass;
     public $option = [
         
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // Error mod
@@ -60,7 +60,7 @@ class DataBase {
 
             );
         } catch(PDOException $e) {
-            //exit($e->getMessage());
+            exit($e->getMessage());
             return $this->pdo;
         }
     }
@@ -71,6 +71,13 @@ class DataBase {
 
         $sql = "GRANT ALL ON *.* TO '$name'@'localhost' = PASSWORD('$pass');";
         $result = $this->pdo->exec($sql);
+    }
+
+    public function showUsers() {
+
+        $sql = 'SELECT User FROM user WHERE User != \'mysql.sys\' AND User != \'mysql.session\' AND User != \'debian-sys-maint\';';
+        $result = $this->pdo->query($sql);
+        return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
      // Redact Password
@@ -88,7 +95,7 @@ class DataBase {
     }
 
      // Show Database
-    public function showDatabase() {
+    public function showDatabases() {
 
         $sql = "SHOW DATABASES;";
         $result = $this->pdo->query($sql);
@@ -112,7 +119,7 @@ class DataBase {
      // Show Table
     public function showTable($db) {
 
-        $sql = "USE $db;SHOW TABLES;";
+        $sql = "SHOW TABLES;";
         $result = $this->pdo->query($sql);
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }

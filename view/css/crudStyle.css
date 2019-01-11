@@ -5,11 +5,12 @@
 
 body {
     font-family: sans-serif;
+    background-color: rgb(220,220,220);
 }
 
 form#menuForm {
     width: 100%;
-    height: 100px;
+    height: 50px;
     margin-bottom: 40px;
     background-color: rgba(0,0,0, 0.7);
     box-shadow: 2px 2px 20px black;
@@ -23,12 +24,18 @@ nav.menu {
 }
 
 button.menuButton {
+    outline: none;
     height: 90%;
-    margin-top: 5px;
     font-size: 2em;
     width: 20%;
     color: rgba(0,0,0, 0.7);
     border: 1px solid rgba(0,0,0, 0.7);
+    box-shadow: 1px 1px 10px black;
+}
+
+button.menuButton:hover {
+    background-color: rgba(202, 202, 202, 0.8);
+    color: white;
 }
 
 button.first {

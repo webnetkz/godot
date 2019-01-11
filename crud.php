@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru en">
     <head>
         <title>CRUD</title>
 
@@ -25,9 +25,6 @@
             <button name="menu[]" type="submit" value="4" class="menuButton last">Delete</button>
         </nav>
     </form>
-
-    
-
         <script type="text/javascript" src="/view/js/crud.js"></script>
         <script type="text/javascript" src="/view/js/ajaxCrud.js"></script>
     </body>
@@ -40,10 +37,16 @@ ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
+session_start();
+
+if(!$_SESSION['login']) {
+    header('Location: index.php');
+}
+
 require_once 'app/DataBase.php';
 
 $pdo = new DataBase();
-
+$pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
 
 if(!empty($_GET)) {
 
@@ -51,6 +54,7 @@ if(!empty($_GET)) {
 
     if($button[0] == 1) {
         require_once 'app/Create.php';
+
     }
     
     if($button[0] == 2) {

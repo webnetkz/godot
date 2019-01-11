@@ -17,6 +17,9 @@ if(!empty($_POST['login']) && !empty($_POST['pass'])) {
     $pdo->ConnectDataBase($login, $pass);
 
     if($pdo->pdo != null) {
+        session_start();
+        $_SESSION['login'] = $login;
+        $_SESSION['pass'] = $pass; 
         header('Location: crud.php');
     }   
 }
@@ -43,7 +46,7 @@ if(!empty($_POST['login']) && !empty($_POST['pass'])) {
     <body>
 
     <form action="index.php" method="POST">
-        <input type="text" name="login" placeholder="Login">
+        <input type="text" name="login" placeholder="Login" autocomplete="off">
         <input type="password" name="pass" placeholder="Password">
             <button type="submit" name="send">Connect</button>
     </form>
