@@ -1,0 +1,59 @@
+<?php
+
+
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+
+require_once 'app/DataBase.php';
+
+$pdo = new DataBase();
+
+if(!empty($_POST['login']) && !empty($_POST['pass'])) {
+
+    $login = $_POST['login'];
+    $pass = $_POST['pass'];
+    
+    $pdo->ConnectDataBase($login, $pass);
+
+    if($pdo->pdo != null) {
+        header('Location: crud.php');
+    }   
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Connect width DataBase</title>
+
+        <meta charset="UTF-8">
+        <meta name="author" content="TOO "WebNet">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="index, follow">
+
+        <link rel="shortcut icon" href="/view/img/miniLogo.png" type="image/png">
+        <link rel="stylesheet" href="/view/css/style.css">
+        <link rel="stylesheet" href="/view/css/mobileStyle.css">
+          
+    </head>
+    <body>
+
+    <form action="index.php" method="POST">
+        <input type="text" name="login" placeholder="Login">
+        <input type="password" name="pass" placeholder="Password">
+            <button type="submit" name="send">Connect</button>
+    </form>
+
+
+
+        <script type="text/javascript" src="/view/js/main.js"></script>
+        <script type="text/javascript" src="/view/js/ajaxMain.js"></script>
+    </body>
+</html>
+
+
+

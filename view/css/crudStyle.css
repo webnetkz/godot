@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+form#menuForm {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 40px;
+    background-color: rgba(0,0,0, 0.7);
+    box-shadow: 2px 2px 20px black;
+    border-bottom-left-radius: 90px;
+    border-bottom-right-radius: 90px;
+}
+
+nav.menu {
+    height: 100%;
+    margin-left: 15%;
+}
+
+button.menuButton {
+    height: 90%;
+    margin-top: 5px;
+    font-size: 2em;
+    width: 20%;
+    color: rgba(0,0,0, 0.7);
+    border: 1px solid rgba(0,0,0, 0.7);
+}
+
+button.first {
+    border-bottom-left-radius: 50px;
+}
+
+button.last {
+    border-bottom-right-radius: 50px;
+}

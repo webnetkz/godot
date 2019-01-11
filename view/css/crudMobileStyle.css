@@ -1,0 +1,17 @@
+@media only screen and (max-width: 430px) {
+
+    form#menuForm {
+        height: 70px;
+    }
+
+    nav.menu {
+        margin-left: 7.5%;
+    }
+
+    button.menuButton {
+        font-size: 1em;
+        height: 80%;
+        width: 22%;
+    }
+
+}
