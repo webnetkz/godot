@@ -2,15 +2,17 @@
 
 $users = $pdo->showUsers();
 $databases = $pdo->showDatabases();
-$pdo->useDatabase('crud');
-$tables = $pdo->showTable();
+
+
+
+
 
 
 
 
 
 echo '<pre>';
-var_dump($tables);
+//var_dump($table_);
 echo '</pre>';
 ?>
 
@@ -31,7 +33,20 @@ echo '</pre>';
         <?php
             foreach($databases as $key => $val) {
                 echo '<button>' . $val['Database'] . '</button><br>';
+                $d = $val['Database'];
+                
+                if($d) {
+                    $pdo->useDatabase($d);
+                    $t = $pdo->showTable();
+                    
+                    $tableName = 'Tables_in_'.$val['Database'];
+
+                    foreach($t as $key => $val) {
+                        echo '<button>' . $val[$tableName] . '</button>';
+                    }
+                }     
             }
+
         ?>
     </div>
 <hr>
