@@ -2,10 +2,16 @@
 
 $users = $pdo->showUsers();
 $databases = $pdo->showDatabases();
-//$tables = $pdo->showTable();
+$pdo->useDatabase('crud');
+$tables = $pdo->showTable();
 
 
-//var_dump();
+
+
+
+echo '<pre>';
+var_dump($tables);
+echo '</pre>';
 ?>
 
 <nav>

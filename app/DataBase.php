@@ -60,7 +60,7 @@ class DataBase {
 
             );
         } catch(PDOException $e) {
-            exit($e->getMessage());
+            //exit($e->getMessage());
             return $this->pdo;
         }
     }
@@ -87,6 +87,12 @@ class DataBase {
         $result = $this->pdo->exec($sql);
     }
 // Databases
+     // Use Database
+    public function useDatabase($name){
+        $sql = "USE $name";
+        $result = $this->pdo->query($sql);
+    }
+
      // Create Database
     public function createDatabase($name) {
 
@@ -117,7 +123,7 @@ class DataBase {
     }
 
      // Show Table
-    public function showTable($db) {
+    public function showTable() {
 
         $sql = "SHOW TABLES;";
         $result = $this->pdo->query($sql);
