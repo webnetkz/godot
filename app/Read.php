@@ -5,12 +5,6 @@ $databases = $pdo->showDatabases();
 
 
 
-
-
-
-
-
-
 echo '<pre>';
 //var_dump($table_);
 echo '</pre>';
