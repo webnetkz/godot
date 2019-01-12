@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+
+if($_SESSION['login']) {
+    header('Location: crud.php');
+}
 
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
@@ -17,7 +22,6 @@ if(!empty($_POST['login']) && !empty($_POST['pass'])) {
     $pdo->ConnectDataBase($login, $pass);
 
     if($pdo->pdo != null) {
-        session_start();
         $_SESSION['login'] = $login;
         $_SESSION['pass'] = $pass; 
         header('Location: crud.php');

@@ -19,10 +19,10 @@
 
     <form id="menuForm" action="crud.php" method="GET">
         <nav class="menu">
-            <button name="menu[]" type="submit" value="1" class="menuButton first">Create</button>
-            <button name="menu[]" type="submit" value="2" class="menuButton">Read</button>
-            <button name="menu[]" type="submit" value="3" class="menuButton">Update</button>
-            <button name="menu[]" type="submit" value="4" class="menuButton last">Delete</button>
+            <button name="menu" type="submit" value="1" class="menuButton first">Create</button>
+            <button name="menu" type="submit" value="2" class="menuButton">Read</button>
+            <button name="menu" type="submit" value="3" class="menuButton">Update</button>
+            <button name="menu" type="submit" value="4" class="menuButton last">Delete</button>
         </nav>
     </form>
         <script type="text/javascript" src="/view/js/crud.js"></script>
