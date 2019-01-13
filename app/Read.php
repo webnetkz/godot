@@ -11,24 +11,24 @@ echo '</pre>';
 ?>
 
 <nav>
-<button id="navUsers">Users</button>
+<button id="navUsers" class="btnReadOne">Users</button>
     <div id="users" style="display: none;">
         <?php
         
             foreach($users as $key => $val) {
-                echo '<button>' . $val['User'] . '</button><br>';
+                echo '<button class="btnReadTwo">' . $val['User'] . '</button>';
             }
 
         ?>
     </div>
 <hr>
-<button id="navDatabases">Databases</button>
+<button id="navDatabases" class="btnReadOne">Databases</button>
     <div id="databases" style="display: none;">
         <?php
             foreach($databases as $key => $val) {
-                echo '<button>' . $val['Database'] . '</button><br>';
+                echo '<button class="btnReadTwo">' . $val['Database'] . '</button>';
                 $d = $val['Database'];
-                
+                echo '<div style="display: visible">';
                 if($d) {
                     $pdo->useDatabase($d);
                     $t = $pdo->showTable();
@@ -36,9 +36,10 @@ echo '</pre>';
                     $tableName = 'Tables_in_'.$val['Database'];
 
                     foreach($t as $key => $val) {
-                        echo '<button>' . $val[$tableName] . '</button>';
+                        echo '<button class="btnReadThree">' . $val[$tableName] . '</button>';
                     }
-                }     
+                }
+                echo '<hr></div>';     
             }
 
         ?>
