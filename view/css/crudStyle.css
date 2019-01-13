@@ -51,18 +51,20 @@ button.last {
 }
 
 button.btnReadOne {
-    width: 100%;
+    display: block;
+    margin: 1px auto;
+    width: 80%;
 }
 
 button.btnReadTwo {
     display: block;
-    width: 80%;
+    width: 60%;
     margin: 2px auto;
 }
 
 button.btnReadThree {
     display: block;
-    width: 60%;
+    width: 40%;
     margin: 2px auto;
     word-wrap: break-word;
 }

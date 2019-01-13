@@ -15,7 +15,7 @@ class DataBase {
     public $option = [
         
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // Error mod
-        //PDO::ATTR_PERSISTENT => true // Infinite connect 
+        //PDO::ATTR_PERSISTENT => true // Continuous connect 
 
     ];
 
@@ -73,6 +73,7 @@ class DataBase {
         $result = $this->pdo->exec($sql);
     }
 
+     // Show users
     public function showUsers() {
 
         $sql = 'SELECT User FROM user WHERE User != \'mysql.sys\' AND User != \'mysql.session\' AND User != \'debian-sys-maint\';';
@@ -80,7 +81,7 @@ class DataBase {
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
-     // Redact Password
+     // Change Password
     public function setPassword($name, $pass) {
 
         $sql = "SET PASSWORD FOR '$name'@'localhost' = PASSWORD('$pass');";
@@ -130,6 +131,13 @@ class DataBase {
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
+     // Desc Table
+    public function descTable($name) {
+        $sql = "DESC $name";
+        $result = $this->pdo->query($sql);
+        return $result->fetchAll(PDO::FETCH_ASSOC);
+    }
+
      // Rename Table
     public function renameTable($name, $newname) {
 
@@ -144,7 +152,7 @@ class DataBase {
         $result = $this->pdo->exec($sql);
     }
 // Columns
-     // Add column
+     // Append column
     public function addColumn($table, $name, $type) {
 
         $sql = "ALTER TABLE $table ADD $name $type NOT NULL;";
@@ -159,10 +167,10 @@ class DataBase {
     }
 
 // Rows
-     // Add line
-     public function addRow($table, $where, $row) {
+     // Append line
+     public function addRow($table, $where, $row, $type) {
 
-        $sql = "INSERT INTO $table($where) VALUES($row);";
+        $sql = "INSERT INTO $table($where) VALUES($row $type NOT NULL);";
         $result = $this->pdo->exec($sql);
      }
 
