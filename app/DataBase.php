@@ -69,11 +69,15 @@ class DataBase {
      // Create User
     public function createUser($name, $pass) {
 
-        $sql = "GRANT ALL ON *.* TO '$name'@'localhost' = PASSWORD('$pass');";
-        $result = $this->pdo->exec($sql);
+        $sql = "CREATE USER '$name'@'localhost' IDENTIFIED BY '$pass';";
+        $sqlPrivileges = "GRANT ALL PRIVILEGES ON * . * TO '$name'@'localhost';";
+        $sqlFlush = 'FLUSH PRIVILEGES;';
+
+        $this->pdo->query($sql);
+        $this->pdo->query($sqlFlush);
     } 
 
-     // Show users
+     // Show Users
     public function showUsers() {
 
         $sql = 'SELECT User FROM user WHERE User != \'mysql.sys\' AND User != \'mysql.session\' AND User != \'debian-sys-maint\';';
@@ -85,23 +89,29 @@ class DataBase {
     public function setPassword($name, $pass) {
 
         $sql = "SET PASSWORD FOR '$name'@'localhost' = PASSWORD('$pass');";
-        $result = $this->pdo->exec($sql);
+        $this->pdo->exec($sql);
     }
+
+     // Delete User
+    public function dropUser($name) {
+
+        $sql = "DROP USER '$name'@'localhost'";
+        $this->pdo->exec($sql);
+    }
+
 // Databases
      //Create Database
     public function createDatabase($name) {
 
         $sql = "CREATE DATABASE IF NOT EXISTS $name CHARACTER SET utf8 COLLATE utf8_general_ci;";
-        $result = $this->pdo->exec($sql);    
+        $this->pdo->query($sql);    
     }
 
      // Use Database
     public function useDatabase($name){
         $sql = "USE $name";
-        $result = $this->pdo->query($sql);
+        $this->pdo->query($sql);
     }
-
-    
 
      // Show Database
     public function showDatabases() {
@@ -114,15 +124,15 @@ class DataBase {
      // Delete Database
     public function deleteDatabase($name) {
 
-        $sql = "DROP DATABASE IF EXISTS $name;";
-        $result = $this->pdo->exec($sql);
+        $sql = "DROP DATABASE IF EXISTS `$name`;";
+        $this->pdo->exec($sql);
     }
 // Tables
      // Create Table
     public function createTable($name) {
 
-        $sql = "CREATE TABLE IF NOT EXISTS $name (id INT UNSIGNED NOT NULL AUTO_INCREMENT, PRIMARY KEY(id));";
-        $result = $this->pdo->exec($sql);
+        $sql = "CREATE TABLE IF NOT EXISTS `$name` (id INT UNSIGNED NOT NULL AUTO_INCREMENT, PRIMARY KEY(id));";
+        $this->pdo->exec($sql);
     }
 
      // Show Table
