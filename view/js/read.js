@@ -1,19 +1,13 @@
-navUsers.addEventListener('click', openUsers);
-function openUsers() {
-    users.style.cssText = 'display: visible;';
+var openElement = document.body.getElementsByClassName('openElement');
 
-    navUsers.addEventListener('click', closeUsers);
-    function closeUsers() {
-        users.style.cssText = 'display: none;';
-    }
+
+
+for(var i = 0; i < openElement.length; i++) {
+    openElement[i].addEventListener('click', openE);
 }
 
-navDatabases.addEventListener('click', openDatabases);
-function openDatabases() {
-    databases.style.cssText = 'display: visible;';
+function openE(e) {
+        
+} 
 
-    navDatabases.addEventListener('click', closeDatabases);
-    function closeDatabases() {
-        databases.style.cssText = 'display: none;';
-    }
-}
+

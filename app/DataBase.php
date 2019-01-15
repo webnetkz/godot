@@ -71,7 +71,7 @@ class DataBase {
 
         $sql = "GRANT ALL ON *.* TO '$name'@'localhost' = PASSWORD('$pass');";
         $result = $this->pdo->exec($sql);
-    }
+    } 
 
      // Show users
     public function showUsers() {
@@ -88,18 +88,20 @@ class DataBase {
         $result = $this->pdo->exec($sql);
     }
 // Databases
+     //Create Database
+    public function createDatabase($name) {
+
+        $sql = "CREATE DATABASE IF NOT EXISTS $name CHARACTER SET utf8 COLLATE utf8_general_ci;";
+        $result = $this->pdo->exec($sql);    
+    }
+
      // Use Database
     public function useDatabase($name){
         $sql = "USE $name";
         $result = $this->pdo->query($sql);
     }
 
-     // Create Database
-    public function createDatabase($name) {
-
-        $sql = "CREATE DATABASE IF NOT EXISTS $name CHARACTER SET utf8 COLLATE utf8_general_ci;";
-        $result = $this->pdo->exec($sql);    
-    }
+    
 
      // Show Database
     public function showDatabases() {
