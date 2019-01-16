@@ -104,7 +104,10 @@ class DataBase {
     public function createDatabase($name) {
 
         $sql = "CREATE DATABASE IF NOT EXISTS $name CHARACTER SET utf8 COLLATE utf8_general_ci;";
-        $this->pdo->query($sql);    
+        $result = $this->pdo->query($sql);    
+        if($result) {
+            return $result;
+        }
     }
 
      // Use Database

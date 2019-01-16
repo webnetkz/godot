@@ -51,6 +51,7 @@ button.last {
 }
 
 h2.crud {
+    text-align: center;
     color: rgba(0,0,0, 0.7);
     width: 80%;
     margin: auto auto;

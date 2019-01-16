@@ -86,8 +86,13 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
     }
 
         if(!empty($_POST['nameDatabase'])) {
-            $pdo->createDatabase($_POST['nameDatabase']);
-            echo 'Database created!';
+            $resultD = $pdo->createDatabase($_POST['nameDatabase']);
+
+            if($resultD) {
+                echo 'Database created!<hr>'. var_dump($resultD);
+            } else {
+                echo 'Please check the input data!<hr>';
+            }
         }
 
 ?>

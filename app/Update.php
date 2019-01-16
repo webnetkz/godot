@@ -46,6 +46,8 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
         </nav>
     </div>
 
+    
+    <?php echo phpinfo();?>
 
         <script type="text/javascript" src="/view/js/update.js"></script>
     </body>

@@ -59,7 +59,7 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
     if(!empty($_POST['user'])) {
 
         echo '<input type="text" name="nameUser" placeholder="Delete User" autocomplete="off"><br>';
-        echo '<input type="submit" value="Delete"><hr>';
+        echo '<input type="submit" value="Deleteё"><hr>';
     }
 
         if(!empty($_POST['nameUser'])) {
