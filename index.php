@@ -54,7 +54,7 @@ if(!empty($_POST['login']) && !empty($_POST['pass'])) {
     <form action="index.php" method="POST">
         <input type="text" name="login" placeholder="Login" autocomplete="off">
         <input type="password" name="pass" placeholder="Password">
-            <button type="submit" name="send">Connect</button>
+        <input type="submit" name="send" value="Connect" class="button">
     </form>
 
 

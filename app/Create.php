@@ -48,7 +48,7 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
 
     <form action="Create.php" method="POST">
     
-        <input type="submit" value="Create User" name="user"><hr>
+        <input type="submit" value="Create User" name="user" class="Rbutton"><hr>
 
 <?php
 
@@ -71,7 +71,7 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
 
         ?>    
 
-        <input type="submit" value="Create Database" name="database"><hr>
+        <input type="submit" value="Create Database" name="database" class="Rbutton"><hr>
 
 <?php
         
@@ -97,7 +97,7 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
 
 ?>
 
-        <input type="submit" value="Create New Table" name="table"><hr>
+        <input type="submit" value="Create New Table" name="table" class="Rbutton"><hr>
 
 <?php
 

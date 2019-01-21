@@ -51,7 +51,7 @@ $databases = $pdo->showDatabases();
     
     <form action="Read.php" method="GET">
 
-        <input type="submit" value="Users" name="users"><br>
+        <input type="submit" value="Show Users" name="users" class="Rbutton"><hr>
             <?php
 
 ////////////////////////////
@@ -66,12 +66,12 @@ $databases = $pdo->showDatabases();
                     if(!empty($_GET['user'])) {
                         echo $_GET['user'];
                     }
+                echo '<hr>';
                 } 
             ?>
 
-        <hr>
 
-        <input type="submit" name="databases" value="Databases"><hr>
+        <input type="submit" name="databases" value="Show Databases" class="Rbutton"><hr>
             <?php
 
 ////////////////////////////

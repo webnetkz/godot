@@ -10,6 +10,10 @@ body {
 
 hr {
     margin: 10px auto;
+    height: 3px;
+    width: 90%;
+    background-color: rgba(0,0,0, 0.7);
+    border-radius: 50%;
 }
 
 div#menu {
@@ -40,6 +44,7 @@ button.menuButton {
 button.menuButton:hover {
     background-color: rgba(202, 202, 202, 0.8);
     color: white;
+    transition-duration: 400ms
 }
 
 button.first {
@@ -62,5 +67,31 @@ span.name {
 }
 /* Style for Read */
 
+input.Rbutton {
+    color: white;
+    position:relative;
+    top:50%; 
+    left:50%;
+    transform: translate(-50%, -50%);
+    margin-top: 15px;
+    padding: 4px;
+    box-shadow: 0 0 5px black;
+    width: 30%;
+    border-radius: 20px;
+    background-color: rgba(0,0,0, 0.7);
+}
 
+input.Rbutton:hover {
+    background-color: white;
+    color: rgba(0,0,0, 0.7);
+    transition-duration: 400ms;
+}
 
+input {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 10px;
+    text-align: center;
+}

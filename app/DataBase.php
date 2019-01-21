@@ -14,7 +14,7 @@ class DataBase {
     public $pass;
     public $option = [
         
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // Error mod
+        //PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // Error mod
         //PDO::ATTR_PERSISTENT => true // Continuous connect 
 
     ];
@@ -60,7 +60,7 @@ class DataBase {
 
             );
         } catch(PDOException $e) {
-            //exit($e->getMessage());
+            exit($e->getMessage());
             return $this->pdo;
         }
     }
@@ -69,12 +69,15 @@ class DataBase {
      // Create User
     public function createUser($name, $pass) {
 
-        $sql = "CREATE USER '$name'@'localhost' IDENTIFIED BY '$pass';";
-        $sqlPrivileges = "GRANT ALL PRIVILEGES ON * . * TO '$name'@'localhost';";
-        $sqlFlush = 'FLUSH PRIVILEGES;';
+        $sql = "CREATE USER '$name'@'localhost' IDENTIFIED BY '$pass'";
+        $sqlPrivileges = "GRANT ALL PRIVILEGES ON * . * TO '$name'@'localhost'";
+        $sqlFlush = 'FLUSH PRIVILEGES';
 
         $this->pdo->query($sql);
+        $this->pdo->query($sqlPrivileges);
         $this->pdo->query($sqlFlush);
+        
+        
     } 
 
      // Show Users
