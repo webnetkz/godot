@@ -77,15 +77,15 @@ $users = $pdo->showUsers();
                     echo '<p class="Rtext">' . $privileges[0][$keyGrants] . '</p>';
                     echo '<hr>';
                 }
-                
+////////////////////////////
+////-- VIEW DATABASES --////
+////////////////////////////               
             ?>
-    
+     
         <input type="submit" name="databases" value="Show Databases" class="Rbutton"><hr>
             <?php
 
-////////////////////////////
-////-- VIEW DATABASES --////
-////////////////////////////            
+           
 $databases = $pdo->showDatabases();
 
                 if(!empty($_GET['databases'])) {

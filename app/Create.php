@@ -66,7 +66,7 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
         if(!empty($_POST['nameUser']) && !empty($_POST['passUser'])) {
 
             $pdo->createUser($_POST['nameUser'], $_POST['passUser']);
-            echo 'User created!';
+            echo '<p class="Rtext">User created!</p>';
         }
 
         ?>    
@@ -89,9 +89,7 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
             $resultD = $pdo->createDatabase($_POST['nameDatabase']);
 
             if($resultD) {
-                echo 'Database created!<hr>'. var_dump($resultD);
-            } else {
-                echo 'Please check the input data!<hr>';
+                echo '<p class="Rtext">Database created!</p><hr>';
             }
         }
 
@@ -117,7 +115,7 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
             $pdo->useDatabase($_POST['base']);
 
             $pdo->createTable($_POST['nameTable']);
-            echo 'Table created!';
+            echo '<p class="Rtext">Table created!</p><hr>';
         }
 
 ?>

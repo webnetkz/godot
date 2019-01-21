@@ -65,7 +65,7 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
         if(!empty($_POST['nameUser'])) {
 
             $pdo->dropUser($_POST['nameUser']);
-            echo 'User deleted!<hr>';
+            echo '<p class="Rtext">User deleted!</p><hr>';
         }
 
         ?>    
@@ -86,18 +86,19 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
 
         if(!empty($_POST['nameDatabase'])) {
             $pdo->deleteDatabase($_POST['nameDatabase']);
-            echo 'Database deleted!<hr>';
+            echo '<p class="Rtext">Database deleted!<p><hr>';
         }
 
+////////////////////////////
+////--- DELETE TABLE ---////
+////////////////////////////
 ?>
 
         <input type="submit" value="Delete Table" name="table" class="Rbutton"><hr>
 
 <?php
 
-////////////////////////////
-////--- DELETE TABLE ---////
-////////////////////////////
+
 
     if(!empty($_POST['table'])) {
                         
@@ -111,7 +112,7 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
             $pdo->useDatabase($_POST['base']);
 
             $pdo->deleteTable($_POST['nameTable']);
-            echo 'Table deleted!<hr>';
+            echo '<p class="Rtext">Table deleted!</p><hr>';
         }
 
 ?>
@@ -122,13 +123,3 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
         <script type="text/javascript" src="/view/js/delete.js"></script>
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-

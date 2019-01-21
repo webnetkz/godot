@@ -14,7 +14,7 @@ class DataBase {
     public $pass;
     public $option = [
         
-        //PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // Error mod
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // Error mod
         //PDO::ATTR_PERSISTENT => true // Continuous connect 
 
     ];
