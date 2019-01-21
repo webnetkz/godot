@@ -15,7 +15,10 @@
     }
 
     input.Rbutton {
-        width: 50%;
+        width: 70%;
     }
 
+    input.RbuttonTwo {
+        width: 60%;
+    }
 }

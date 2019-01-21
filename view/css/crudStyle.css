@@ -9,7 +9,7 @@ body {
 }
 
 hr {
-    margin: 10px auto;
+    margin: 20px auto;
     height: 3px;
     width: 90%;
     background-color: rgba(0,0,0, 0.7);
@@ -69,12 +69,8 @@ span.name {
 
 input.Rbutton {
     color: white;
-    position:relative;
-    top:50%; 
-    left:50%;
-    transform: translate(-50%, -50%);
-    margin-top: 15px;
-    padding: 4px;
+    margin-top: 20px;
+    padding: 6px;
     box-shadow: 0 0 5px black;
     width: 30%;
     border-radius: 20px;
@@ -82,6 +78,37 @@ input.Rbutton {
 }
 
 input.Rbutton:hover {
+    background-color: white;
+    color: rgba(0,0,0, 0.7);
+    transition-duration: 400ms;
+}
+
+input.RbuttonTwo {
+    padding: 5px;
+    color: white;
+    box-shadow: 0 0 5px black;
+    width: 25%;
+    border-radius: 20px;
+    background-color: rgba(0,0,0, 0.7);
+
+}
+
+input.RbuttonTwo:hover {
+    background-color: white;
+    color: rgba(0,0,0, 0.7);
+    transition-duration: 400ms;
+}
+
+input.RbuttonThree {
+    padding: 5px;
+    color: white;
+    box-shadow: 0 0 5px black;
+    width: 20%;
+    border-radius: 20px;
+    background-color: rgba(0,0,0, 0.7);
+}
+
+input.RbuttonThree:hover {
     background-color: white;
     color: rgba(0,0,0, 0.7);
     transition-duration: 400ms;
@@ -95,3 +122,4 @@ input {
     margin-top: 10px;
     text-align: center;
 }
+

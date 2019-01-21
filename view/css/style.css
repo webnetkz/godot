@@ -11,7 +11,7 @@ form {
     position: fixed;
     border: 3px solid rgba(0,0,0, 0.3);;
     width: 30%;
-    height: 20%;
+    height: 25%;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);

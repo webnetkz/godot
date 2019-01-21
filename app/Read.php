@@ -16,9 +16,6 @@ $pdo = new DataBase();
 $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
 
 
-$users = $pdo->showUsers();
-$databases = $pdo->showDatabases();
-
 ?>
 
 <!DOCTYPE html>
@@ -57,17 +54,15 @@ $databases = $pdo->showDatabases();
 ////////////////////////////
 ////---- VIEW USERS ----////
 ////////////////////////////
+$users = $pdo->showUsers();
 
                 if(!empty($_GET['users'])) {
                     foreach($users as $k => $v) {
-                        echo '<input type="submit" value="' . $v["User"] . '" name="user"><br>';
-                    }
-
-                    if(!empty($_GET['user'])) {
-                        echo $_GET['user'];
-                    }
+                        echo '<input type="submit" value="' . $v["User"] . '" name="user" class="RbuttonTwo"><br>';
+                    }   
                 echo '<hr>';
                 } 
+
             ?>
 
 
@@ -77,10 +72,11 @@ $databases = $pdo->showDatabases();
 ////////////////////////////
 ////-- VIEW DATABASES --////
 ////////////////////////////            
-            
+$databases = $pdo->showDatabases();
+
                 if(!empty($_GET['databases'])) {
                     foreach($databases as $k => $v) {
-                        echo '<input type="submit" class="databases" value="' . $v['Database'] . '" name="database"><br>';
+                        echo '<input type="submit" class="RbuttonTwo" value="' . $v['Database'] . '" name="database"><br>';
                     }
                     echo '<hr>';
                 }
@@ -93,13 +89,16 @@ $databases = $pdo->showDatabases();
                     $getD = 'Tables_in_'.$_GET['database'];
                     
                     $pdo->useDatabase($_GET['database']);
-                    $tables = $pdo->showTable();
+                    echo '<input type="submit" class="RbuttonTwo" value="Tables: ' . $_GET['database'] . '"><br>';
+                    $tables = $pdo->showTables();
 
-                    echo 'Tables in ' . $_GET['database'] . ':<br>';
+                    
+
                     foreach($tables as $k => $v) {
-                        echo '<input type="submit" class="tables" value="' . $v[$getD] . '" name="tables"><br>';       
+                        echo '<input type="submit" class="tables RbuttonThree" value="' . $v[$getD] . '" name="tables"><br>';       
                     }
                 }
+
             ?>
         </ul>
         

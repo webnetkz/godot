@@ -142,7 +142,7 @@ class DataBase {
     }
 
      // Show Table
-    public function showTable() {
+    public function showTables() {
 
         $sql = "SHOW TABLES;";
         $result = $this->pdo->query($sql);
