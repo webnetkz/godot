@@ -60,12 +60,26 @@ $users = $pdo->showUsers();
                     foreach($users as $k => $v) {
                         echo '<input type="submit" value="' . $v["User"] . '" name="user" class="RbuttonTwo"><br>';
                     }   
-                echo '<hr>';
-                } 
+                    echo '<hr>';  
+                }
+                
+                if(!empty($_GET['user'])) {
 
+                    $user = '\''.$_GET['user'].'\'@\'localhost\'';
+
+                    $res = $pdo->pdo->query('SHOW GRANTS FOR '.$user);
+                    $privileges = $res->fetchAll(PDO::FETCH_ASSOC);
+
+                    echo '<input type="submit" value="' . $_GET['user'] . '" class="RbuttonTwo"><br>';
+                    $keyGrants = 'Grants for '.$_GET['user'].'@localhost';
+
+
+                    echo '<p class="Rtext">' . $privileges[0][$keyGrants] . '</p>';
+                    echo '<hr>';
+                }
+                
             ?>
-
-
+    
         <input type="submit" name="databases" value="Show Databases" class="Rbutton"><hr>
             <?php
 

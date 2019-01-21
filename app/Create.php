@@ -58,9 +58,9 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
         
     if(!empty($_POST['user'])) {
 
-        echo '<input type="text" name="nameUser" placeholder="Create New User" autocomplete="off"><br>';
-        echo '<input type="password" name="passUser" placeholder="Password"><br>';
-        echo '<input type="submit" value="Create"><hr>';
+        echo '<input type="text" name="nameUser" placeholder="Create New User" autocomplete="off" class="inp"><br>';
+        echo '<input type="password" name="passUser" placeholder="Password" class="inp"><br>';
+        echo '<input type="submit" value="Create" class="button"><hr>';
     }
 
         if(!empty($_POST['nameUser']) && !empty($_POST['passUser'])) {
@@ -81,8 +81,8 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
 
     if(!empty($_POST['database'])) {
                     
-        echo '<input type="text" name="nameDatabase" placeholder="Create New Database" autocomplete="off"><br>';
-        echo '<input type="submit" value="Create"><hr>';
+        echo '<input type="text" name="nameDatabase" placeholder="Create New Database" autocomplete="off" class="inp"><br>';
+        echo '<input type="submit" value="Create" class="button"><hr>';
     }
 
         if(!empty($_POST['nameDatabase'])) {
@@ -107,9 +107,9 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
 
     if(!empty($_POST['table'])) {
                         
-        echo '<input type="text" name="nameTable" placeholder="Create New Table" autocomplete="off"><br>';
-        echo '<input type="text" name="base" placeholder="For Database" autocomplete="off"><br>';
-        echo '<input type="submit" value="Create"><hr>';
+        echo '<input type="text" name="nameTable" placeholder="Create New Table" autocomplete="off" class="inp"><br>';
+        echo '<input type="text" name="base" placeholder="For Database" autocomplete="off" class="inp"><br>';
+        echo '<input type="submit" value="Create" class="button"><hr>';
     }
 
         if(!empty($_POST['nameTable'])) {

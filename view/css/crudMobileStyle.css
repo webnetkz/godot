@@ -21,4 +21,8 @@
     input.RbuttonTwo {
         width: 60%;
     }
+
+    input.RbuttonThree {
+        width: 80%;
+    }
 }

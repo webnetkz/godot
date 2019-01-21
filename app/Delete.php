@@ -48,7 +48,7 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
 
     <form action="Delete.php" method="POST">
     
-        <input type="submit" value="Delete User" name="user"><hr>
+        <input type="submit" value="Delete User" name="user" class="Rbutton"><hr>
 
 <?php
 
@@ -58,8 +58,8 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
         
     if(!empty($_POST['user'])) {
 
-        echo '<input type="text" name="nameUser" placeholder="Delete User" autocomplete="off"><br>';
-        echo '<input type="submit" value="Deleteё"><hr>';
+        echo '<input type="text" name="nameUser" placeholder="Delete User" autocomplete="off" class="inp"><br>';
+        echo '<input type="submit" value="Delete" class="button"><hr>';
     }
 
         if(!empty($_POST['nameUser'])) {
@@ -70,7 +70,7 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
 
         ?>    
 
-        <input type="submit" value="Delete Database" name="database"><hr>
+        <input type="submit" value="Delete Database" name="database" class="Rbutton"><hr>
 
 <?php
         
@@ -80,8 +80,8 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
 
     if(!empty($_POST['database'])) {
                     
-        echo '<input type="text" name="nameDatabase" placeholder="Delete Database" autocomplete="off"><br>';
-        echo '<input type="submit" value="Delete"><hr>';
+        echo '<input type="text" name="nameDatabase" placeholder="Delete Database" autocomplete="off" class="inp"><br>';
+        echo '<input type="submit" value="Delete" class="button"><hr>';
     }
 
         if(!empty($_POST['nameDatabase'])) {
@@ -91,7 +91,7 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
 
 ?>
 
-        <input type="submit" value="Delete Table" name="table"><hr>
+        <input type="submit" value="Delete Table" name="table" class="Rbutton"><hr>
 
 <?php
 
@@ -101,9 +101,9 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
 
     if(!empty($_POST['table'])) {
                         
-        echo '<input type="text" name="nameTable" placeholder="Delete Table" autocomplete="off"><br>';
-        echo '<input type="text" name="base" placeholder="For Database" autocomplete="off"><br>';
-        echo '<input type="submit" value="Create"><hr>';
+        echo '<input type="text" name="nameTable" placeholder="Delete Table" autocomplete="off" class="inp"><br>';
+        echo '<input type="text" name="base" placeholder="For Database" autocomplete="off" class="inp"><br>';
+        echo '<input type="submit" value="Create" class="button"><hr>';
     }
 
         if(!empty($_POST['nameTable'])) {
