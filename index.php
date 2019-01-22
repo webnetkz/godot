@@ -1,16 +1,18 @@
 <?php
 
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+
 ini_set('session.gc_maxlifetime', 60*60*24*30);
 ini_set('session.cookie_lifetime', 60*60*24*30);
+session_set_cookie_params(60*60*24*30);
+
 session_start();
 
 if($_SESSION['login']) {
     header('Location: crud.php');
 }
-
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
 
 require_once 'app/DataBase.php';
 

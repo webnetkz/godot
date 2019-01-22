@@ -141,7 +141,7 @@ class DataBase {
         $this->pdo->exec($sql);
     }
 
-     // Show Table
+     // Show Tables
     public function showTables() {
 
         $sql = "SHOW TABLES;";
