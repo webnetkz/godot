@@ -156,10 +156,10 @@ input.button:hover {
 input.inp {
     height: 1.5em;
     border-radius: 10px;
-    color: white;
+    color: rgba(0,0,0, 0.6);
 }
 
 input.inp:focus {
-    background-color: rgba(0,0,0, 0.7);
+    background-color: rgba(0,0,0, 0.1);
     color: white;
 }

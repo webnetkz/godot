@@ -4,17 +4,10 @@ ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
-session_start();
-
-if(!$_SESSION['login']) {
-    header('Location: index.php');
-}
-
 require_once 'app/DataBase.php';
 
 $pdo = new DataBase();
-$pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
-
+$pdo->connectDatabase($_COOKIE['login'], $_COOKIE['pass']);
 
 ?>
 
@@ -45,7 +38,7 @@ $pdo->connectDatabase($_SESSION['login'], $_SESSION['pass']);
             <a href="app/Delete.php"><button class="menuButton last">Delete</button></a>
         </nav>
     </div>
-    <h2 class="crud">Weclome <span class="name"><?php echo $_SESSION['login'];?></span> to CRUD</h2>
+    <h2 class="crud">Weclome <span class="name"><?php echo $_COOKIE['login'];?></span> to CRUD</h2>
 
         <script type="text/javascript" src="/view/js/crud.js"></script>
         <script type="text/javascript" src="/view/js/ajaxCrud.js"></script>
