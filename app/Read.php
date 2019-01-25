@@ -83,12 +83,13 @@ $users = $pdo->showUsers();
 $databases = $pdo->showDatabases();
 
                 if(!empty($_GET['databases'])) {
-                    foreach($databases as $k => $v) {
-                        echo '<input type="submit" class="RbuttonTwo" value="' . $v['Database'] . '" name="database"><br>';
+                    foreach($databases as $key => $value) {
+                        echo '<input type="submit" class="RbuttonTwo" value="' . $value['Database'] . '" name="database"><br>';
                     }
                     echo '<hr>';
+                    
                 }
-                
+
 ////////////////////////////
 ////--- VIEW TABLES ----////
 ////////////////////////////
@@ -97,15 +98,25 @@ $databases = $pdo->showDatabases();
                     $getD = 'Tables_in_'.$_GET['database'];
                     
                     $pdo->useDatabase($_GET['database']);
+                    
                     echo '<input type="submit" class="RbuttonTwo" value="Tables: ' . $_GET['database'] . '"><br>';
+
                     $tables = $pdo->showTables();
 
-                    
-
                     foreach($tables as $k => $v) {
-                        echo '<input type="submit" class="tables RbuttonThree" value="' . $v[$getD] . '" name="table"><br>';       
+                        echo '<input type="submit" class="tables RbuttonThree" value="' . $v[$getD] . '" name="table"><br>';
+                        
                     }
                 }
+
+                if(!empty($_GET['table'])) {
+                    $pdo->useDatabase('buh');
+
+                    $table = $pdo->descTable($_GET['table']);
+                    echo '<pre>';
+                    var_dump($_GET, $table);
+                }
+
 
             ?>
         

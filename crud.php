@@ -40,8 +40,8 @@ $pdo->connectDatabase($_COOKIE['login'], $_COOKIE['pass']);
     </div>
     <h2 class="crud">Weclome <span class="name"><?php echo $_COOKIE['login'];?></span> to CRUD</h2>
 
-        <script type="text/javascript" src="/view/js/crud.js"></script>
-        <script type="text/javascript" src="/view/js/ajaxCrud.js"></script>
+        <script type="text/javascript" src="/view/js/jquery.js"></script>
+        <script type="text/javascript" src="/view/js/ajax.js"></script>
     </body>
 </html>
 

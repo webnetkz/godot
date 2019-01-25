@@ -10,12 +10,12 @@ class DataBase {
     public $dbname = 'mysql';
     public $charset = 'utf8';
     public $port = 3306;
-    public $login;
+    public $login;  
     public $pass;
     public $option = [
         
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, // Error mod
-        //PDO::ATTR_PERSISTENT => true // Continuous connect 
+        PDO::ATTR_PERSISTENT => true // Continuous connect 
 
     ];
 
@@ -82,7 +82,7 @@ class DataBase {
 
      // Show Users
     public function showUsers() {
-
+        $this->useDatabase('mysql');
         $sql = 'SELECT User FROM user WHERE User != \'mysql.sys\' AND User != \'mysql.session\' AND User != \'debian-sys-maint\';';
         $result = $this->pdo->query($sql);
         return $result->fetchAll(PDO::FETCH_ASSOC);
@@ -151,6 +151,7 @@ class DataBase {
 
      // Desc Table
     public function descTable($name) {
+
         $sql = "DESC $name";
         $result = $this->pdo->query($sql);
         return $result->fetchAll(PDO::FETCH_ASSOC);
