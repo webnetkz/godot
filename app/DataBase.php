@@ -157,6 +157,14 @@ class DataBase {
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
+     // Show Table
+    public function showTable($name) {
+
+        $sql = "SELECT * FROM $name";
+        $result = $this->pdo->query($sql);
+        return $result->fetchAll(PDO::FETCH_ASSOC);
+    }
+
      // Rename Table
     public function renameTable($name, $newname) {
 

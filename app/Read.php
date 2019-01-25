@@ -110,11 +110,11 @@ $databases = $pdo->showDatabases();
                 }
 
                 if(!empty($_GET['table'])) {
-                    $pdo->useDatabase('buh');
 
-                    $table = $pdo->descTable($_GET['table']);
+                    //$tableD = $pdo->descTable($_GET['table']);
+                    $tableS = $pdo->showTable($_GET['table']);
                     echo '<pre>';
-                    var_dump($_GET, $table);
+                    var_dump( $tableS);
                 }
 
 
