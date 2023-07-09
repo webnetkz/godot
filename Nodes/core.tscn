@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://1ka0wcjt8b6h"]
+
+[ext_resource type="PackedScene" uid="uid://cwvhlo6ubryam" path="res://Nodes/Player/player.tscn" id="1_vobre"]
+[ext_resource type="PackedScene" uid="uid://53lpvkp1jukx" path="res://Nodes/Level/Level.tscn" id="2_vmfr1"]
+
+[node name="Core" type="Node2D"]
+self_modulate = Color(1, 1, 0.180392, 1)
+texture_filter = 2
+texture_repeat = 2
+
+[node name="Player" parent="." instance=ExtResource("1_vobre")]
+position = Vector2(584, 568)
+
+[node name="Level" parent="." instance=ExtResource("2_vmfr1")]
+position = Vector2(64, 8)

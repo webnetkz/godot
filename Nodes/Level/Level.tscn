@@ -1,0 +1,98 @@
+[gd_scene load_steps=3 format=3 uid="uid://53lpvkp1jukx"]
+
+[ext_resource type="PackedScene" uid="uid://2yts5wqujsfl" path="res://Nodes/Level/Platform.tscn" id="1_xfwnv"]
+[ext_resource type="PackedScene" uid="uid://c64r5tgxke3ye" path="res://Nodes/Level/Background.tscn" id="2_axa2c"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Platform" parent="." instance=ExtResource("1_xfwnv")]
+position = Vector2(383, 622)
+
+[node name="Platform6" parent="." instance=ExtResource("1_xfwnv")]
+position = Vector2(-1950, 1245)
+scale = Vector2(20, 1)
+
+[node name="Platform7" parent="." instance=ExtResource("1_xfwnv")]
+position = Vector2(-1952, -1598)
+scale = Vector2(20, 1)
+
+[node name="Platform8" parent="." instance=ExtResource("1_xfwnv")]
+position = Vector2(-1058, -1667)
+rotation = 1.5708
+scale = Vector2(20, 1)
+
+[node name="Platform9" parent="." instance=ExtResource("1_xfwnv")]
+position = Vector2(2000, -1667)
+rotation = 1.5708
+scale = Vector2(20, 1)
+
+[node name="Platform2" parent="." instance=ExtResource("1_xfwnv")]
+position = Vector2(682, 412)
+
+[node name="Platform3" parent="." instance=ExtResource("1_xfwnv")]
+position = Vector2(118, 266)
+
+[node name="Platform4" parent="." instance=ExtResource("1_xfwnv")]
+position = Vector2(594, 60)
+
+[node name="Platform5" parent="." instance=ExtResource("1_xfwnv")]
+position = Vector2(190, -39)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_axa2c")]
+z_index = -10
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_axa2c")]
+z_index = -10
+position = Vector2(-1390, 2)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_axa2c")]
+z_index = -10
+position = Vector2(1385, 2)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_axa2c")]
+z_index = -10
+position = Vector2(7, -683)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("2_axa2c")]
+z_index = -10
+position = Vector2(-1383, -681)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("2_axa2c")]
+z_index = -10
+position = Vector2(1392, -681)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("2_axa2c")]
+z_index = -10
+position = Vector2(3, 670)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("2_axa2c")]
+z_index = -10
+position = Vector2(-1387, 672)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("2_axa2c")]
+z_index = -10
+position = Vector2(1388, 672)
+
+[node name="StaticBody2D10" parent="." instance=ExtResource("2_axa2c")]
+z_index = -10
+position = Vector2(114, -1352)
+
+[node name="StaticBody2D11" parent="." instance=ExtResource("2_axa2c")]
+z_index = -10
+position = Vector2(-1276, -1350)
+
+[node name="StaticBody2D12" parent="." instance=ExtResource("2_axa2c")]
+z_index = -10
+position = Vector2(1499, -1350)
+
+[node name="StaticBody2D13" parent="." instance=ExtResource("2_axa2c")]
+z_index = -10
+position = Vector2(114, -2008)
+
+[node name="StaticBody2D14" parent="." instance=ExtResource("2_axa2c")]
+z_index = -10
+position = Vector2(-1276, -2006)
+
+[node name="StaticBody2D15" parent="." instance=ExtResource("2_axa2c")]
+z_index = -10
+position = Vector2(1499, -2006)

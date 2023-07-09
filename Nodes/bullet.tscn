@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdcljf6ixxk3o"]
+
+[ext_resource type="Script" path="res://Scripts/Bullet.gd" id="1_nn5a6"]
+
+[sub_resource type="Gradient" id="Gradient_ep43p"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rgcko"]
+gradient = SubResource("Gradient_ep43p")
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(0.5, 0.484375)
+texture = SubResource("GradientTexture2D_rgcko")
+script = ExtResource("1_nn5a6")

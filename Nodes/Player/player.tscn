@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://cwvhlo6ubryam"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_vajw5"]
+[ext_resource type="Texture2D" uid="uid://c56l03ep8o2ym" path="res://Images/Rocket.png" id="2_1eyg0"]
+[ext_resource type="Texture2D" uid="uid://ept1tlb6hod7" path="res://Images/Player.png" id="2_j7m4f"]
+[ext_resource type="Script" path="res://Nodes/Player/Shaking.gd" id="3_sfeaa"]
+[ext_resource type="Script" path="res://Nodes/Player/Go.gd" id="3_ydg4r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqpyn"]
+size = Vector2(64, 74)
+
+[sub_resource type="Gradient" id="Gradient_u8ax6"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5p2kf"]
+gradient = SubResource("Gradient_u8ax6")
+width = 2
+fill_from = Vector2(0.752137, 1)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4rkrt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_itydi"]
+radius = 33.0
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 77
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_vajw5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 5)
+shape = SubResource("RectangleShape2D_vqpyn")
+one_way_collision_margin = 0.0
+debug_color = Color(0.67451, 0.505882, 0.0117647, 0.184314)
+
+[node name="Rocket" type="Sprite2D" parent="."]
+position = Vector2(0.500006, -1)
+scale = Vector2(4.04348, 3.8)
+texture = ExtResource("2_1eyg0")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-3, 21)
+script = ExtResource("3_sfeaa")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(-2, 57)
+lifetime = 0.4
+speed_scale = 3.92
+texture = SubResource("GradientTexture2D_5p2kf")
+emission_shape = 1
+emission_sphere_radius = 4.87
+color = Color(0.866667, 1, 0.333333, 1)
+script = ExtResource("3_ydg4r")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+position = Vector2(-2, 57)
+lifetime = 0.4
+speed_scale = 3.92
+texture = SubResource("GradientTexture2D_5p2kf")
+emission_shape = 1
+emission_sphere_radius = 4.87
+color = Color(0.866667, 1, 0.333333, 1)
+script = ExtResource("3_ydg4r")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+z_index = 79
+position = Vector2(-1, 46)
+scale = Vector2(6.06515, 1.39854)
+texture = SubResource("NoiseTexture2D_4rkrt")
+texture_scale = 26.71
+height = 9.0
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(-2, 16)
+scale = Vector2(1.02174, 2)
+texture = ExtResource("2_j7m4f")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(2.08165e-12, -24)
+shape = SubResource("CircleShape2D_itydi")

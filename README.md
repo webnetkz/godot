@@ -1,2 +1,0 @@
-# crud
-SUBD crud mysql
